@@ -1,0 +1,173 @@
+# Union-de-Programas-
+//Alumno: Jose Eduardo Baltazar Roman
+//Grupo: 4 "B"
+#include<stdio.h>
+#include<stdlib.h>
+int main ()
+{
+    int a;
+    char opc;
+    printf("-----------------¿¿¿¿Listo para comenzar????---------------\n[S/N]: ");
+    scanf ("%s",&opc);
+    while (opc=='s'|| opc== 'S')
+    {
+    printf ("-------------------------------------------------------------\n");
+    printf ("\t Vamos a comenzar!\n");
+    printf("Selecciona la opcion para el programa que quieres realizar:\n1.- Visualizar figuras\n2.- Calcular el valor de pi\n3.-Serie de numeros.\n");
+    scanf("%d",&a);
+    while (a==1)
+    {
+    int r, e, a;
+    int na=1; //Numero de asteriscos
+    int ne=4; //Numero de espacios
+    int ia=2; //Incremento de asteriscos
+    int ie=-1; //Incremento de espacios
+    printf ("A)\n");
+    for (r=1;r<=10;r++)
+    {
+        for (a=1;a<=r;a++)
+        {
+            printf ("*");
+        }
+        printf ("\n");
+    }
+    printf ("B)\n");
+    for (r=1;r<=10;r++)//Renglones
+    {
+        for (a=r;a<=10;a++)//Asteriscos
+        {
+            printf ("*");
+        }
+        printf ("\n");
+    }
+    printf ("C)\n");
+    for (r=1;r<=10;r++)//Renglones
+    {
+        for (e=2;e<=r;e++)//Espacios
+        {
+            printf (" ");
+        }
+        for (a=10;a>=r;a--)//Asteriscos
+        {
+            printf ("*");
+        }
+        printf ("\n");
+    }
+    printf ("D)\n");
+    for (r=1;r<=10;r++)//Renglones
+    {
+        for (e=9;e>=r;e--) //Espacios
+        {
+            printf(" ");
+        }
+        for (a=1;a<=r;a++)
+        {
+            printf("*");
+        }
+        printf ("\n");
+    }
+    printf ("Diamante\n");
+    for (int r=1;r<=9;r++)//For de renglones
+    {
+        for (int e=1;e<=ne;e++) //For de espacios
+        {
+            printf (" ");
+        }
+        for (int a=1;a<=na;a++)//For de asteriscos
+        {
+            printf ("*");
+        }
+        printf ("\n");
+        if (r==5)
+        {
+            ia=-2;
+            ie=1;
+        }
+        ne=ne+ie;
+        na=na+ia;
+    }
+    printf ("\n¿Quieres volver a empezar? [S/N]:\t");
+    scanf ("%s",&opc);
+    system("cls");
+    }
+    while (a==2)
+    {
+        int i,v , j = 1;
+        double pi = 0, spi;
+        printf("Ingresa el número de valores: ");
+        scanf("%d",&v);
+        for (i=0;i<v;i++)
+        {
+          spi=4/(double)j;
+               if (i % 2 == 1)
+               {
+                  pi-=spi;
+               }
+               else
+               {
+                   pi+=spi;
+               }
+          j += 2;
+        }
+    printf("El valor de Pi es: %.16f", pi);
+    printf ("\n¿Quieres volver a empezar?\t [S/N]:");
+    scanf ("%s",&opc);
+    system("cls");
+    }
+    while (a==3)
+    {
+        int v, p, s, t, c;//V=Cuanto quieres, N=Numero de veces, P=Primera serie, S=segunda Serie, T=Tercera Serie, C=Cuarta serie
+        printf ("Dime el numero de veces que voy a imprimir las series\n");
+        scanf ("%d",&v);
+        p=1;
+        s=1;
+        t=1;
+        c=1;
+    printf ("\nPrimera serie:\n");
+    while (p<=v)//Para que se mantenga
+    {
+        int n=-1;
+        for (p=1;p<=v;p++)//Para que ya no se mantenga
+        {
+            n=n+2;
+            printf ("%d, ",n);
+        }
+    }
+    printf ("\nSegunda serie:\n");
+    while (s<=v)//Para que se mantenga
+    {
+        int n=0;
+        for (s=1;s<=v;s++)//Para que ya no se mantenga
+        {
+            n=n+3;
+            printf ("%d, ",n);
+        }
+    }
+    printf ("\nTercera serie:\n");
+    while (t<=v)//Para que se mantenga
+    {
+        int n=40;
+        for (t=1;t<=v;t++)//Para que ya no se mantenga
+        {
+            n=n-10;
+            printf ("%d, ",n);
+        }
+    }
+    printf ("\nCuarta Serie:\n");
+    while (c<=v)//Para que se mantenga
+    {
+        int n=7;
+        for (c=1;c<=v;c++)//Para que ya no se mantenga
+        {
+            n=n+8;
+            printf ("%d, ",n);
+        }
+    }
+    printf ("\n¿Quieres volver a empezar? [S/N]:\t");
+    scanf ("%s",&opc);
+    system("cls");
+    }
+    }
+    printf ("\t\t\tGracias!!!!");
+    return 0;
+}
